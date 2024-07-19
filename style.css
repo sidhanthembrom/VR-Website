@@ -6,6 +6,15 @@
     background-size: cover;
 }
 
+.navbars{
+    display: flex;
+    justify-content: end;
+}
+
+.brand-name{
+    display: block;
+}
+
 .row{
     height: 100vh;
 }
