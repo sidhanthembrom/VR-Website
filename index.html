@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VR</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="bg-container">
-      <div class="container">
-        <nav
-          class="navbar navbar-expand-lg fixed-top navbar-light bg-light d-flex justify-content-between"
-        >
-          <div class="container">
-            <a class="navbar-brand mr-0 d-flex" href="#home">
+    <div class="main-container">
+      <div id="home">
+        <nav class="navbar backdrop-filter fixed-top navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex" href="#home">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -39,8 +37,8 @@
             <button
               class="navbar-toggler"
               type="button"
-              data-toggle="collapse"
-              data-target="#navbarNavAltMarkup"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup"
               aria-expanded="false"
               aria-label="Toggle navigation"
@@ -49,20 +47,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav mx-auto">
-                <a class="nav-link active" href="#home"
-                  >Overview <span class="sr-only">(current)</span></a
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Overview</a
                 >
-                <a class="nav-link" id="navItem2" href="#feature"
-                  >Guided Tour</a
-                >
-                <a class="nav-link" id="navItem1" href="#product">Tech Specs</a>
-                <a class="nav-link" id="navItem3" href="#gallery"
-                  >Book a demo</a
-                >
+                <a class="nav-link" href="#">Guided Tour</a>
+                <a class="nav-link" href="#">Tech Specs</a>
+                <a class="nav-link" href="#">Book a demo</a>
               </div>
-              <!-- <button class="btn btn-outline-info">
-              Click Me
-            </button> -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -78,32 +69,34 @@
             </div>
           </div>
         </nav>
-      </div>
-      <div class="container">
-        <div id="home" class="row text-center">
-          <div class="col-12 d-flex flex-column justify-content-end">
-            <h1 class="text-dark mb-5 pb-5">
-              <div class="text-info">Apple Vision Pro</div>
-              4K HDR Headsets
-            </h1>
+
+        <div class="banner-container">
+          <div class="container">
+            <div class="row text-center">
+              <div class="col-12 d-flex flex-column justify-content-end">
+                <h1 class="text-dark fs-1 mb-5 pb-5">
+                  <div class="text-info">Apple Vision Pro</div>
+                  4K HDR Headsets
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div id="feature" class="d-flex flex-column justify-content-center">
         <div class="container">
-          <h2 class="text-dark font-weight-bold text-center">
-            Apple Vision Pro seamlessly blends digital content with your
-            physical space.
-            <br />
-            <br />
-            So you can work, watch, relive memories, and connect in ways never
-            before possible.
-            <br />
-            <br />
-            The era of spatial computing is here.
-            <br />
-            <br />
-            <button class="btn btn-outline-info">
+          <h2 class="text-dark fw-bold text-center">
+            <div class="px-5">
+              Apple Vision Pro seamlessly blends digital content with your
+              physical space.
+            </div>
+            <div class="px-5 pt-5">
+              So you can work, watch, relive memories, and connect in ways never
+              before possible.
+            </div>
+            <div class="px-5 py-5">The era of spatial computing is here.</div>
+            <button class="custom-button-outline mt-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -124,12 +117,16 @@
           </h2>
         </div>
       </div>
-      <div class="entertainment-section text-center py-5 d-flex flex-column justify-content-around"
+
+      <div
+        class="bg-body-tertiary py-5 d-flex flex-column justify-content-around"
       >
-        <div class="container">
-          <h4 class="pt-5">Entertainment</h4>
-          <h2 class="font-weight-bold">
-            The Ultimate theater. Wherever You are.
+        <div class="container text-center">
+          <h5 class="pt-5 font-weight">Entertainment</h5>
+          <h2 class="section-main-heading fw-bold">
+            The ultimate <br />
+            theater. <br />
+            Wherever You are.
           </h2>
         </div>
         <video
@@ -137,11 +134,9 @@
           class="w-100 mt-5"
           controls
         ></video>
-        <div class="container text-left pb-4 px-4">
-          <h4 class="font-weight-bold mt-5 mb-3">
-            A new dimension for entertainment.
-          </h4>
-          <p class="text-secondary font-weight-bold">
+        <div class="container pb-4 px-4">
+          <h5 class="fw-bold mt-5 mb-3">A new dimension for entertainment.</h5>
+          <p class="text-secondary font-weight">
             Apple Vision Pro can transform any room into your own personal
             theater. Expand your movies, shows, and games to your perfect size
             and experience them in Spatial Audio. Apple Immersive Video puts you
@@ -168,16 +163,661 @@
           </div>
         </div>
       </div>
-      <div class="productivity-section"></div>
+
+      <div
+        class="productivity-section py-5 d-flex flex-column justify-content-around"
+      >
+        <div class="container text-center">
+          <h5 class="pt-5 font-weight">Productivity</h5>
+          <h2 class="section-main-heading fw-bold">
+            A workspace with infinte space.
+          </h2>
+        </div>
+        <video
+          src="https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/experience-productivity/small.mp4"
+          class="w-100 mt-5"
+          controls
+        ></video>
+        <div class="container pb-4 px-4">
+          <h5 class="fw-bold mt-5 mb-3">Discover new ways to work.</h5>
+          <p class="text-secondary font-weight">
+            Apple Vision Pro gives you limitless space to get things done.
+            Organize everything you need anywhere around you, in any way you
+            like. Seamlessly bring in your Mac workflows using Mac Virtual
+            Display. Connect a Magic Keyboard, a Magic Trackpad, and other
+            Bluetooth accessories to expand how you navigate. And with SharePlay
+            in FaceTime, you can collaborate with colleagues using apps together
+            in real time.
+          </p>
+          <div class="d-flex justify-content-center mt-5">
+            <button class="custom-button pr-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                fill="currentColor"
+                class="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg>
+              Learn more about productivity
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-body-tertiary py-5 d-flex flex-column justify-content-around"
+      >
+        <div class="container text-center">
+          <h5 class="pt-5 font-weight">Photos and Videos</h5>
+          <h2 class="section-main-heading fw-bold">
+            Be in the moment. All over again.
+          </h2>
+        </div>
+        <video
+          src="https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/experience-photos-videos/small.mp4"
+          class="w-100 mt-5"
+          controls
+        ></video>
+        <div class="container pb-4 px-4">
+          <h5 class="fw-bold mt-5 mb-3">Your memories come alive.</h5>
+          <p class="text-secondary font-weight">
+            Apple Vision Pro is Apple’s first 3D camera. You can capture magical
+            spatial photos and spatial videos in 3D, then relive those cherished
+            moments like never before with immersive Spatial Audio. Your
+            existing library of photos and videos looks incredible at remarkable
+            scale — and coming this fall, you’ll be able to transform your 2D
+            photos into spatial photos with just a tap. Even panoramas wrap
+            around you — making you feel like you’re standing right where you
+            took them. You can also take spatial videos with iPhone 15 Pro, then
+            view them on Apple Vision Pro.
+          </p>
+          <div class="d-flex justify-content-center mt-5">
+            <button class="custom-button pr-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                fill="currentColor"
+                class="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg>
+              Learn more about photos and videos
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="connection-section py-5 d-flex flex-column justify-content-around"
+      >
+        <div class="container text-center">
+          <h5 class="pt-5 font-weight">Connection</h5>
+          <h2 class="section-main-heading fw-bold">
+            Share quality time. And space.
+          </h2>
+        </div>
+        <video
+          src="https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/experience-connection-a/small.mp4"
+          class="w-100 mt-5"
+          controls
+        ></video>
+        <div class="container pb-4 px-4">
+          <h5 class="fw-bold mt-5 mb-3">
+            A more engaging way to get together.
+          </h5>
+          <p class="text-secondary font-weight">
+            Apple Vision Pro makes it easy to collaborate and connect wherever
+            you are. You can see FaceTime participants in life-size video tiles,
+            or you can choose to use your spatial Persona and feel like you are
+            sharing the same space with others. And use SharePlay to watch,
+            listen, and play together with your favorite people.
+          </p>
+          <div class="d-flex justify-content-center mt-5">
+            <button class="custom-button pr-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                fill="currentColor"
+                class="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg>
+              Learn more about connection
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-body-tertiary py-5 d-flex flex-column justify-content-around"
+      >
+        <div class="container text-center">
+          <h5 class="pt-5 font-weight">Apps</h5>
+          <h2 class="section-main-heading fw-bold">
+            Do what you love Reimagine how <br />
+            you do it.
+          </h2>
+        </div>
+        <video
+          src="https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/experience-apps-a/small.mp4"
+          class="w-100 mt-5"
+          controls
+        ></video>
+        <div class="container pb-4 px-4">
+          <h5 class="fw-bold mt-5 mb-3">
+            A world of apps. A world of discovery.
+          </h5>
+          <p class="text-secondary font-weight">
+            Apple Vision Pro expands the experience of your go‑to apps and opens
+            up new possibilities in entertainment, productivity, gaming, and
+            more. Browse the web in Safari, create a to‑do list in Notes, chat
+            in Messages, and seamlessly move between them with a glance. And
+            explore the App Store to discover an ever-expanding collection of
+            awe-inspiring spatial apps designed for Apple Vision Pro.
+          </p>
+          <div class="d-flex justify-content-center mt-5">
+            <button class="custom-button pr-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                fill="currentColor"
+                class="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg>
+              Learn more about apps
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="visionOS-section py-5 d-flex flex-column justify-content-around"
+      >
+        <div class="container text-center">
+          <h5 class="pt-5 font-weight">visionOS</h5>
+          <h2 class="section-main-heading fw-bold">
+            An operating <br />
+            system designed <br />for spatial.
+          </h2>
+        </div>
+        <video
+          src="https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/visionos-a/small.mp4"
+          class="w-100 mt-5"
+          controls
+        ></video>
+        <div class="container pb-4 px-4">
+          <h5 class="fw-bold mt-5 mb-3">
+            Navigate spatial experiences. <br />
+            Naturally.
+          </h5>
+          <p class="text-secondary font-weight">
+            Built on the foundation of macOS, iOS, and iPadOS, visionOS enables
+            powerful spatial experiences. Control Apple Vision Pro with your
+            eyes, hands, and voice — interactions feel intuitive and magical.
+            Simply look at an element, tap your fingers together to select, and
+            use the virtual keyboard or dictation to type. And coming this fall,
+            visionOS 2 introduces even more ways to enhance work, entertainment,
+            and connecting with friends and family using Apple Vision Pro.
+          </p>
+          <div class="d-flex justify-content-center mt-5">
+            <button class="custom-button pr-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                fill="currentColor"
+                class="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg>
+              Learn more about visionOS
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-body-tertiary pt-5 d-flex flex-column justify-content-around overflow-hidden"
+      >
+        <div class="container text-center">
+          <h5 class="pt-5 font-weight">Design</h5>
+          <h2 class="section-main-heading fw-bold">Designed by Apple.</h2>
+        </div>
+        <div class="container pb-4 px-4">
+          <p class="text-secondary font-weight pb-5 text-center mt-3">
+            Apple Vision Pro is the result of decades of experience designing
+            high‑performance, mobile, and wearable devices — culminating in the
+            most ambitious product Apple has ever created. Apple Vision Pro
+            integrates incredibly advanced technology into an elegant, compact
+            form, resulting in an amazing experience every time you put it on.
+          </p>
+          <p class="pt-3 pb-3 text-secondary font-weight">
+            <span class="text-dark">Front.</span> A singular piece of
+            three-dimensionally formed laminated glass flows into an aluminum
+            alloy frame that curves to wrap around your face.
+          </p>
+          <p class="pb-3 text-secondary font-weight">
+            <span class="text-dark">Light Seal.</span> The Light Seal gently
+            flexes to conform to your face, delivering a precise fit while
+            blocking out stray light.
+          </p>
+          <p class="pb-3 text-secondary font-weight">
+            <span class="text-dark">Head bands.</span> The Solo Knit Band
+            provides cushioning, breathability, and stretch, and a Fit Dial lets
+            you adjust Apple Vision Pro precisely to your head. The Dual Loop
+            Band offers an additional option for a personalized fit.
+          </p>
+          <p class="pb-3 text-secondary font-weight">
+            <span class="text-dark">Power.</span> The external battery supports
+            up to 2 hours of general use and up to 2.5 hours of video playback.
+          </p>
+          <p class="pb-3 text-secondary font-weight">
+            <span class="text-dark">Sound.</span> Speakers positioned close to
+            your ears deliver rich Spatial Audio while keeping you aware of your
+            surroundings.
+          </p>
+        </div>
+
+        <img
+          width="132%"
+          class=""
+          src="https://www.apple.com/v/apple-vision-pro/e/images/overview/design/portrait_right_base__cd0c4xdglcs2_large.jpg"
+          alt=""
+        />
+      </div>
+      <div class="container">
+        <img
+          class="w-100 mt-3"
+          src="https://www.apple.com/v/apple-vision-pro/e/images/overview/design/portrait_front_base__gmqifatci56q_small_2x.jpg"
+          alt=""
+        />
+        <p class="py-3 text-secondary font-weight">
+          <span class="text-dark">EyeSight.</span> An outward display reveals
+          your eyes while wearing Apple Vision Pro, letting others know when you
+          are using apps or fully immersed.
+        </p>
+        <img
+          class="w-100 pb-4"
+          src="https://www.apple.com/v/apple-vision-pro/e/images/overview/design/glass_top__k3b8lzqd1l2m_small_2x.jpg"
+          alt=""
+        />
+        <img
+          class="w-100 pb-5"
+          src="https://www.apple.com/v/apple-vision-pro/e/images/overview/design/glass_side__gm4agomrwl2e_small_2x.jpg"
+          alt=""
+        />
+        <p class="py-4 text-secondary font-weight">
+          A singular piece of
+          <span class="text-dark"
+            >three-dimensionally formed laminated glass</span
+          >
+          acts as an optical surface for the cameras and sensors that view the
+          world. It flows seamlessly into a
+          <span class="text-dark">custom aluminum alloy frame</span> that gently
+          curves to wrap around your face while serving as an attachment point
+          for the <span class="text-dark">Light Seal</span>.
+        </p>
+      </div>
+      <div class="design-btn-container d-flex flex-column justify-content-end">
+        <div class="d-flex justify-content-center pb-5">
+          <button class="custom-button pr-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="27"
+              height="27"
+              fill="currentColor"
+              class="bi bi-plus"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+              />
+            </svg>
+            Learn more about design
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="technology-section text-white text-center py-5 d-flex flex-column justify-content-around"
+      >
+        <div class="container">
+          <h5 class="pt-5 font-weight">Technology</h5>
+          <h2 class="section-main-heading fw-bold">
+            Innovation you can see, hear, and feel.
+          </h2>
+          <h5 class="pt-4 font-weight">
+            Pushing boundaries from the <br />
+            inside out.
+          </h5>
+        </div>
+        <div class="container text-left pb-4 px-4">
+          <p class="text-secondary text-center font-weight pb-5">
+            Spatial experiences on <br />
+            Apple Vision Pro are only possible through groundbreaking Apple
+            technology. Displays the size of a postage stamp that deliver more
+            pixels than a 4K TV to each eye. Incredible advances in Spatial
+            Audio. A revolutionary dual‑chip design featuring custom Apple
+            silicon. A sophisticated array of cameras and sensors. All the
+            elements work together to create an unprecedented experience you
+            have to see to believe.
+          </p>
+
+          <img
+            class="w-100"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/displays/hero_base__bpxhq09r962u_small_2x.jpg"
+            alt=""
+          />
+          <h5 class="pt-5 font-weight">
+            More pixels than a 4K TV. For <br />
+            each eye.
+          </h5>
+          <p class="pb-5 pt-3 text-secondary font-weight">
+            The
+            <span class="text-white">custom micro-LED display system</span>
+            features 23 million pixels, delivering stunning resolution and
+            colors. And a specially designed three‑element lens creates the
+            feeling of a display that’s everywhere you look.
+          </p>
+
+          <img
+            class="w-100"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/spatial_audio_base__d8zvuse3yu4i_small_2x.jpg"
+            alt=""
+          />
+          <h5 class="pt-5 font-weight">
+            Our most advanced Spatial Audio system ever.
+          </h5>
+          <p class="pb-5 pt-3 text-secondary font-weight">
+            Dual-driver audio pods positioned next to each ear deliver
+            personalized sound while letting you hear what’s around you.
+            <span class="text-white">Spatial Audio</span> makes sounds feel like
+            they’re coming from your surroundings. Audio ray tracing analyzes
+            your room’s acoustic properties to adapt and match sound to your
+            space. And if you want to use headphones with Apple Vision Pro,
+            AirPods Pro (2nd generation) with USB‑C offer the perfect
+            experience, featuring Lossless Audio with ultra-low latency enabled
+            by the H2 chip in both devices.
+          </p>
+
+          <img
+            class="w-100 mt-4"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/features/eye_tracking_on__ln11reqs6mi6_small_2x.jpg"
+            alt=""
+          />
+          <h5 class="pt-5 font-weight">Responsive, precision eye tracking.</h5>
+          <p class="pb-5 pt-3 text-secondary font-weight">
+            A high-performance eye-tracking system of
+            <span class="text-white">LEDs</span> and
+            <span class="text-white">infrared cameras</span> projects invisible
+            light patterns onto each eye. This advanced system provides
+            ultraprecise input without your needing to hold any controllers, so
+            you can accurately select elements just by looking at them.
+          </p>
+
+          <img
+            class="w-100 mt-4"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/features/sensors_all__dp0a8e4y4u4i_small_2x.jpg"
+            alt=""
+          />
+          <h5 class="pt-5 font-weight">A sophisticated sensor array.</h5>
+          <p class="pb-5 pt-3 text-secondary mb-0 font-weight">
+            A pair of
+            <span class="text-white">high-resolution cameras</span> transmit
+            over one billion pixels per second to the displays so you can see
+            the world around you clearly. The system also helps deliver
+            <span class="text-white">precise head and hand tracking</span> and
+            <span class="text-white">real-time 3D mapping</span>, all while
+            understanding your hand gestures from a wide range of positions.
+          </p>
+        </div>
+
+        <div class="vr-headset-zoomed">
+          <!-- used for background -->
+        </div>
+        <div class="container margin-top-negative">
+          <h5 class="font-weight">Revolutionary dual-chip performance.</h5>
+          <p class="pb-1 pt-3 text-secondary mb-0 font-weight">
+            A unique dual‑chip design enables the spatial experiences on Apple
+            Vision Pro. The powerful <span class="text-white">M2</span> chip
+            simultaneously runs visionOS, executes advanced computer vision
+            algorithms, and delivers stunning graphics, all with incredible
+            efficiency. And the brand-new
+            <span class="text-white">R1</span> chip is specifically dedicated to
+            process input from the cameras, sensors, and microphones, streaming
+            images to the displays within 12 milliseconds — for a virtually
+            lag-free, real-time view of the world.
+          </p>
+
+          <div class="d-flex justify-content-center py-4">
+            <button class="custom-button-white pr-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="27"
+                height="27"
+                fill="currentColor"
+                class="bi bi-plus"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg>
+              Learn more about technology
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="value-section text-center pt-5 d-flex flex-column justify-content-around"
+      >
+        <div class="container">
+          <h5 class="pt-5 font-weight">Values</h5>
+          <h2 class="section-main-heading fw-bold">
+            Designed to make <br />
+            a difference.
+          </h2>
+        </div>
+        <div class="container text-center px-4">
+          <p class="text-secondary font-weight mt-3">
+            <span class="text-dark font-weight"
+              >Our Values lead the way. <br
+            /></span>
+            Apple Vision Pro was designed to help protect your privacy and keep
+            you in control of your data. Its built‑in accessibility features are
+            designed to work the way you do.
+          </p>
+        </div>
+        <div class="d-flex justify-content-center py-5">
+          <button class="custom-button pr-3 mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="27"
+              height="27"
+              fill="currentColor"
+              class="bi bi-plus"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+              />
+            </svg>
+            Learn more about technology
+          </button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="px-3 pt-5 text-center bg-body-tertiary">
+          <img
+            width="13%"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/routers/ar_logo__bmtaba6ckk76_small_2x.png"
+            alt=""
+          />
+          <h2 class="my-3">Use AR to view Apple Vision Pro.</h2>
+          <h5 class="text-secondary font-weight mb-2">
+            Open this page using Safari on your iPhone or Ipad.
+          </h5>
+          <img
+            class="w-100 mt-5"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/routers/ar_tile__que64jqs2t2e_small_2x.jpg"
+            alt=""
+          />
+        </div>
+        <div class="px-3 py-5 mt-3 text-center bg-body-tertiary">
+          <img
+            class="w-100"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/routers/accessories__et6yc9y3xvu6_small_2x.jpg"
+            alt=""
+          />
+          <h2 class="mt-5">
+            Explore <br />
+            Apple Vision Pro accessories.
+          </h2>
+          <a class="pb-5" href="#">Shop ></a>
+        </div>
+        <div class="px-3 py-5 my-3 text-center bg-body-tertiary">
+          <img
+            class="w-100"
+            src="https://www.apple.com/v/apple-vision-pro/e/images/overview/routers/developers__bxrd1uafspsi_small_2x.png"
+            alt=""
+          />
+          <h2 class="mt-5">
+            An all-new platform. <br />
+            An all-new world for developers.
+          </h2>
+          <p class="text-secondary">
+            The possibilities for what developers can dream up and build for
+            Apple Vision Pro are endless. And with familiar tools and frameworks
+            like Xcode, SwiftUI, RealityKit, and ARKit, as well as support for
+            Unity and the 3D-content preparation app Reality Composer Pro,
+            developers have everything they need to create amazing spatial
+            experiences.
+          </p>
+          <a class="pb-5" href="#"
+            >Learn more about developing for visionOS ></a
+          >
+        </div>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Shop and Learn
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul class="list">
+                <li>Store</li>
+                <li>Mac</li>
+                <li>Ipad</li>
+                <li>iPhone</li>
+                <li>Watch</li>
+                <li>Vision</li>
+                <li>Airpods</li>
+                <li>TV & Home</li>
+                <li>AirTag</li>
+                <li>Accessories</li>
+                <li>Gift Cards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Apple Wallet
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul class="list">
+                <li>Wallet</li>
+                <li>Apple Card</li>
+                <li>Apple Pay</li>
+                <li>Apple Cash</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Account
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul class="list">
+                <li>Manage Your Apple ID</li>
+                <li>Apple Store Account</li>
+                <li>iCloud.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
   </body>
