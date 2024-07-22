@@ -112,8 +112,7 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
-    /* padding-bottom: 7rem; */
-    width: 83%;
+    width: 700px;
     margin: 0 auto;
   }
 
@@ -137,7 +136,9 @@
     font-size: 3.8rem;
   }
 
-  
+  .section-headline{
+    font-size: 1.5rem;
+  }
 
   .design-btn-container {
     margin-top: 3rem;
