@@ -5,12 +5,16 @@
   backdrop-filter: blur(2rem);
 }
 
+.home{
+  height: 100vh;
+}
+
 .banner-container {
   background-image: url("https://www.apple.com/v/apple-vision-pro/e/images/overview/hero/portrait_base_us__fucaqiry5e2q_small_2x.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center;
-  padding-bottom: 8.5rem;
+  /* margin-bottom: 8.5rem; */
 }
 
 .banner-main-heading{
@@ -19,6 +23,10 @@
 
 .link{
     color: rgba(255, 77, 0, 0.901);
+}
+
+.margin-bottom{
+  margin-bottom: 8rem;
 }
 
 #feature {
@@ -104,24 +112,42 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
-    padding-bottom: 7rem;
+    /* padding-bottom: 7rem; */
+    width: 83%;
+    margin: 0 auto;
   }
 
   .banner-main-heading {
-    font-size: 4.8rem;
+    font-size: 3.6rem;
+  }
+
+  .margin-bottom{
+    margin-bottom: 3.7rem;
+  }
+
+  .link{
+    font-size: large;
   }
 
   #feature {
-    height: 45vh;
+    height: 100vh;
   }
 
   .section-main-heading {
     font-size: 3.8rem;
   }
 
+  
+
+  .design-btn-container {
+    margin-top: 3rem;
+  height: 73vh;
+  background-position: top;
+}
+
   .vr-headset-zoomed {
     background-image: url("https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/features/sensors_chips__s805s5o3gkii_small_2x.jpg");
-    height: 35vh;
+    height: 70vh;
     background-position: center;
     background-size: cover;
   }
