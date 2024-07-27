@@ -1,4 +1,3 @@
 # VR-Website
 
-A clone of Apple Vision Pro Official Website
-With Bootstrap V5.3
+A clone of official website of Apple Vision Pro using Bootstrap v5.3
