@@ -51,6 +51,15 @@
   background-color: black;
 }
 
+.text-over-video-container{
+  background-color: rgba(0, 0, 0, 0.111);
+  backdrop-filter: blur(1px);
+  position: relative;
+  top: -904px;
+  height: 100vh;
+  color: white;
+}
+
 .design-first-pic {
   margin-right: -14rem;
 }
@@ -190,6 +199,11 @@ ol{
 @media screen and (min-width: 1024px){
   .banner-container{
     width: 60%;
+  }
+
+  video{
+    position: sticky;
+    top: 0;
   }
 
   .design-first-pic {
