@@ -2,6 +2,9 @@ const technology = document.querySelector("#tech");
 const navbar = document.querySelector(".navbar");
 const profileIcon = document.querySelector(".bi-person");
 
+// const video = document.querySelector("video");
+const videos = document.querySelectorAll("video");
+
 window.addEventListener("scroll", () => {
   // console.log(technology.getBoundingClientRect().top)
   let diffTop = navbar.offsetHeight - technology.getBoundingClientRect().top;
@@ -41,4 +44,25 @@ window.addEventListener("scroll", () => {
     profileIcon.setAttribute("fill", "currentColor");
     // console.log("white");
   }
+
+  // for video dynamic width change
+  videos.forEach((video) => {
+    if (video.getBoundingClientRect().bottom <= 500) {
+      if (
+        470 < video.getBoundingClientRect().bottom &&
+        video.getBoundingClientRect().bottom <= 500
+      ) {
+        console.log("starts");
+        console.log(`${(video.getBoundingClientRect().bottom / 10) * 2}`);
+        video.style.width = `${
+          (video.getBoundingClientRect().bottom / 10) * 2
+        }%`;
+      } else if (video.getBoundingClientRect().bottom <= 470) {
+        console.log("94");
+        video.style.width = "94%";
+      }
+    } else {
+      video.style.width = "100%";
+    }
+  });
 });
