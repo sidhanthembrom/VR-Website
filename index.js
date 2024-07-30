@@ -2,7 +2,6 @@ const technology = document.querySelector("#tech");
 const navbar = document.querySelector(".navbar");
 const profileIcon = document.querySelector(".bi-person");
 
-// const video = document.querySelector("video");
 const videos = document.querySelectorAll("video");
 
 window.addEventListener("scroll", () => {
@@ -42,27 +41,58 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("bg-black");
     navbar.setAttribute("data-bs-theme", "light");
     profileIcon.setAttribute("fill", "currentColor");
-    // console.log("white");
+    console.log("white");
   }
 
-  // for video dynamic width change
   videos.forEach((video) => {
+    // for video dynamic width change
     if (video.getBoundingClientRect().bottom <= 500) {
       if (
         470 < video.getBoundingClientRect().bottom &&
         video.getBoundingClientRect().bottom <= 500
       ) {
-        console.log("starts");
-        console.log(`${(video.getBoundingClientRect().bottom / 10) * 2}`);
-        video.style.width = `${
-          (video.getBoundingClientRect().bottom / 10) * 2
-        }%`;
+        // console.log("starts");
+        // console.log(`${(video.getBoundingClientRect().bottom / 10) * 2}`);
+        video.style.width = `${(video.getBoundingClientRect().bottom / 10) * 2
+          }%`;
       } else if (video.getBoundingClientRect().bottom <= 470) {
-        console.log("94");
+        // console.log("94");
         video.style.width = "94%";
       }
     } else {
       video.style.width = "100%";
     }
+
+    // video playback when in viewport
+    const videoHeight = video.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+
+    // console.log(videoHeight);
+    // console.log(windowHeight);
+
+    const videoViewportPercentage = (videoHeight / windowHeight) * 100;
+    // console.log(videoViewportPercentage);
+
+    if (35 <= videoViewportPercentage && videoViewportPercentage <= 120) {
+      video.play();
+      // console.log("play");
+    } else if (videoViewportPercentage < 35 || videoViewportPercentage > 120) {
+      video.pause();
+      // console.log("pause");
+    }
   });
 });
+
+
+// changing active class on the navbar
+const nav_links = document.querySelectorAll(".nav-link")
+// console.log(nav_links);
+nav_links.forEach((nav) => {
+  nav.addEventListener('click', (e) => {
+    const activeClass = document.querySelector(".active");
+    activeClass.classList.remove("active");
+    console.log(e.target);
+    e.target.classList.add("active");
+  })
+});
+
