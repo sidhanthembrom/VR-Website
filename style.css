@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
 
 .bg-light {
-  background-color: rgba(255, 255, 255, 0.7) !important; 
+  background-color: rgba(255, 255, 255, 0.7) !important;
   backdrop-filter: blur(2rem);
   transition: all 0.4s linear 0s;
 }
 
-.bg-black{
+.bg-black {
   background: rgba(0, 0, 0, 0.7) !important;
   backdrop-filter: blur(2rem);
 }
 
-.home{
-  height: calc(100vh - 56px);
-  margin-top: 56px;
+.home {
+  height: calc(100vh);
+  /* margin-top: 56px; */
 }
 
 .banner-container {
@@ -23,15 +23,15 @@
   background-position: center;
 }
 
-.banner-main-heading{
-    font-size: 2.8rem;
+.banner-main-heading {
+  font-size: 2.8rem;
 }
 
-.link{
-    color: rgba(255, 77, 0, 0.901);
+.link {
+  color: rgba(255, 77, 0, 0.901);
 }
 
-.margin-bottom{
+.margin-bottom {
   margin-bottom: 6.5rem;
 }
 
@@ -51,7 +51,7 @@
   background-color: black;
 }
 
-.text-over-video-container{
+.text-over-video-container {
   background-color: rgba(0, 0, 0, 0.111);
   backdrop-filter: blur(1px);
   position: relative;
@@ -121,37 +121,36 @@
   margin-top: 0;
 }
 
-.footer-container{
+.footer-container {
   font-size: 0.8rem;
 }
 
-ol{
+ol {
   padding-left: 1rem;
 }
 
-.accordion-item{
+.accordion-item {
   border: 0;
 }
 
-.accordion-button{
+.accordion-button {
   font-size: 0.8rem;
   padding: 10px 0;
 }
 
-.accordion-button:focus{
+.accordion-button:focus {
   border: 0;
   background-color: transparent;
   box-shadow: none;
 }
 
-.accordion-body{
+.accordion-body {
   padding-left: 0;
 }
 
-.footer-grid-row>*{
+.footer-grid-row > * {
   padding-left: 0;
 }
-
 
 @media screen and (min-width: 768px) {
   .banner-container {
@@ -164,11 +163,11 @@ ol{
     font-size: 3.6rem;
   }
 
-  .margin-bottom{
+  .margin-bottom {
     margin-bottom: 2.7rem;
   }
 
-  .link{
+  .link {
     font-size: large;
   }
 
@@ -180,15 +179,15 @@ ol{
     font-size: 3.8rem;
   }
 
-  .section-headline{
+  .section-headline {
     font-size: 1.5rem;
   }
 
   .design-btn-container {
     margin-top: 3rem;
-  height: 73vh;
-  background-position: top;
-}
+    height: 73vh;
+    background-position: top;
+  }
 
   .vr-headset-zoomed {
     background-image: url("https://www.apple.com/v/apple-vision-pro/e/images/overview/technology/features/sensors_chips__s805s5o3gkii_small_2x.jpg");
@@ -197,30 +196,30 @@ ol{
   }
 }
 
-@media screen and (min-width: 1024px){
-  .banner-container{
+@media screen and (min-width: 1024px) {
+  .banner-container {
     background-image: none;
     width: 62%;
     height: 100%;
   }
-  
-  .bannerVideo-container{
+
+  .bannerVideo-container {
     position: relative;
   }
 
-  .bannerVideo{
+  .bannerVideo {
     width: 100%;
     height: calc(100vh - 56px);
   }
 
-  .bannerVideo-text-container{
+  .bannerVideo-text-container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: 2rem;
   }
 
-  .sectionVideo{
+  .sectionVideo {
     position: sticky;
     top: 0;
     width: 100%;
@@ -228,23 +227,22 @@ ol{
   }
 
   .design-first-pic {
-  margin-right: -7rem;
-}
+    margin-right: -7rem;
+  }
 
-.design-btn-container{
-  background-image: url("https://www.apple.com/v/apple-vision-pro/e/images/overview/design/light_seal__fo87cv0zkcmm_medium_2x.jpg");
-  width: 56%;
-  margin: 0 auto;
-}
+  .design-btn-container {
+    background-image: url("https://www.apple.com/v/apple-vision-pro/e/images/overview/design/light_seal__fo87cv0zkcmm_medium_2x.jpg");
+    width: 56%;
+    margin: 0 auto;
+  }
 
-.vr-headset-zoomed{
-  height: 100vh;
-}
-
+  .vr-headset-zoomed {
+    height: 100vh;
+  }
 }
 
 @media screen and (min-width: 2560px) {
-  .vr-headset-zoomed{
+  .vr-headset-zoomed {
     height: 38vh;
     width: 50%;
     display: block;
