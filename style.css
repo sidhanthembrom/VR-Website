@@ -155,7 +155,7 @@ ol{
 
 @media screen and (min-width: 768px) {
   .banner-container {
-    background-image: url("https://www.apple.com/v/apple-vision-pro/e/images/overview/hero/portrait_base_us__fucaqiry5e2q_medium_2x.jpg");
+    /* background-image: url("https://www.apple.com/v/apple-vision-pro/e/images/overview/hero/portrait_base_us__fucaqiry5e2q_medium_2x.jpg"); */
     width: 650px;
     margin: 0 auto;
   }
@@ -199,10 +199,28 @@ ol{
 
 @media screen and (min-width: 1024px){
   .banner-container{
-    width: 60%;
+    background-image: none;
+    width: 62%;
+    height: 100%;
+  }
+  
+  .bannerVideo-container{
+    position: relative;
   }
 
-  video{
+  .bannerVideo{
+    width: 100%;
+    height: calc(100vh - 56px);
+  }
+
+  .bannerVideo-text-container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+  }
+
+  .sectionVideo{
     position: sticky;
     top: 0;
     width: 100%;

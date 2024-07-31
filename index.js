@@ -1,9 +1,24 @@
+//  *** VARIABLES DECLARED *** //
+
+//Used for changing navbar color
 const technology = document.querySelector("#tech");
 const navbar = document.querySelector(".navbar");
 const profileIcon = document.querySelector(".bi-person");
 
-const videos = document.querySelectorAll("video");
+// Used for dynamic width while scrolling
+const sectionVideos = document.querySelectorAll(".sectionVideo");
 
+// Used for changing active navbar
+const nav_links = document.querySelectorAll(".nav-link")
+
+// Used for banner video
+const bannerVideo = document.querySelector(".bannerVideo");
+
+
+
+// *** CODING *** //
+
+// Changing navbar color & sectionVideos width dynamically as the page is scrolled 
 window.addEventListener("scroll", () => {
   // console.log(technology.getBoundingClientRect().top)
   let diffTop = navbar.offsetHeight - technology.getBoundingClientRect().top;
@@ -44,8 +59,10 @@ window.addEventListener("scroll", () => {
     console.log("white");
   }
 
-  videos.forEach((video) => {
-    // for video dynamic width change
+
+  //Video dynamic width change
+  sectionVideos.forEach((video) => {
+    // changing width as the video leaves from the viewport to top
     if (video.getBoundingClientRect().bottom <= 500) {
       if (
         470 < video.getBoundingClientRect().bottom &&
@@ -55,11 +72,15 @@ window.addEventListener("scroll", () => {
         // console.log(`${(video.getBoundingClientRect().bottom / 10) * 2}`);
         video.style.width = `${(video.getBoundingClientRect().bottom / 10) * 2
           }%`;
-      } else if (video.getBoundingClientRect().bottom <= 470) {
+      }
+      // partially out from the top viewport
+      else if (video.getBoundingClientRect().bottom <= 470) {
         // console.log("94");
         video.style.width = "94%";
       }
-    } else {
+    }
+    // video in bottom viewport and below
+    else {
       video.style.width = "100%";
     }
 
@@ -84,9 +105,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-// changing active class on the navbar
-const nav_links = document.querySelectorAll(".nav-link")
-// console.log(nav_links);
+// Changing active class to the clicked nav from the previous nav
 nav_links.forEach((nav) => {
   nav.addEventListener('click', (e) => {
     const activeClass = document.querySelector(".active");
@@ -96,3 +115,15 @@ nav_links.forEach((nav) => {
   })
 });
 
+
+// Playing the bannerVideo initially and then looping it across a certain time frame
+bannerVideo.play(); //initially played
+bannerVideo.addEventListener("timeupdate", () => {
+  const startTime = 4.9
+  const endTime = 7
+
+  if (bannerVideo.currentTime >= endTime) {
+    bannerVideo.currentTime = startTime;
+    bannerVideo.play();
+  }
+});
