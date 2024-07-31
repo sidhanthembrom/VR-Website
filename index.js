@@ -9,16 +9,19 @@ const profileIcon = document.querySelector(".bi-person");
 const sectionVideos = document.querySelectorAll(".sectionVideo");
 
 // Used for changing active navbar
-const nav_links = document.querySelectorAll(".nav-link")
+const nav_links = document.querySelectorAll(".nav-link");
 
 // Used for banner video
 const bannerVideo = document.querySelector(".bannerVideo");
 
+// Used for nav clicking
+const techNav = document.querySelector(".techNav");
+const bookNav = document.querySelector(".value")
 
 
 // *** CODING *** //
 
-// Changing navbar color & sectionVideos width dynamically as the page is scrolled 
+// Changing navbar color & sectionVideos width dynamically as the page is scrolled
 window.addEventListener("scroll", () => {
   // console.log(technology.getBoundingClientRect().top)
   let diffTop = navbar.offsetHeight - technology.getBoundingClientRect().top;
@@ -56,9 +59,8 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("bg-black");
     navbar.setAttribute("data-bs-theme", "light");
     profileIcon.setAttribute("fill", "currentColor");
-    console.log("white");
+    // console.log("white");
   }
-
 
   //Video dynamic width change
   sectionVideos.forEach((video) => {
@@ -70,8 +72,9 @@ window.addEventListener("scroll", () => {
       ) {
         // console.log("starts");
         // console.log(`${(video.getBoundingClientRect().bottom / 10) * 2}`);
-        video.style.width = `${(video.getBoundingClientRect().bottom / 10) * 2
-          }%`;
+        video.style.width = `${
+          (video.getBoundingClientRect().bottom / 10) * 2
+        }%`;
       }
       // partially out from the top viewport
       else if (video.getBoundingClientRect().bottom <= 470) {
@@ -104,26 +107,44 @@ window.addEventListener("scroll", () => {
   });
 });
 
-
 // Changing active class to the clicked nav from the previous nav
 nav_links.forEach((nav) => {
-  nav.addEventListener('click', (e) => {
+  nav.addEventListener("click", (e) => {
     const activeClass = document.querySelector(".active");
     activeClass.classList.remove("active");
-    console.log(e.target);
+    // console.log(e.target);
     e.target.classList.add("active");
-  })
+  });
 });
-
 
 // Playing the bannerVideo initially and then looping it across a certain time frame
 bannerVideo.play(); //initially played
 bannerVideo.addEventListener("timeupdate", () => {
-  const startTime = 4.9
-  const endTime = 7
+  const startTime = 4.9;
+  const endTime = 7;
 
   if (bannerVideo.currentTime >= endTime) {
     bannerVideo.currentTime = startTime;
     bannerVideo.play();
   }
 });
+
+// scrolling to a certain part when clicked 
+techNav.addEventListener("click", (e) => {
+  // console.log("clicked");
+  e.preventDefault();
+  window.scrollTo({
+    top: 17200,
+    left: 0,
+    behavior: "smooth" // Smooth scrolling
+  });
+});
+
+bookNav.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 21700,
+    left: 0,
+    behavior: "smooth"
+  })
+})
