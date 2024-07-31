@@ -130,21 +130,24 @@ bannerVideo.addEventListener("timeupdate", () => {
 });
 
 // scrolling to a certain part when clicked 
-techNav.addEventListener("click", (e) => {
-  // console.log("clicked");
-  e.preventDefault();
-  window.scrollTo({
-    top: 17200,
-    left: 0,
-    behavior: "smooth" // Smooth scrolling
+const isDesktop = window.matchMedia("(min-width: 1024px)").matches; //keeps watch over the device width
+if (isDesktop) {
+  techNav.addEventListener("click", (e) => {
+    // console.log("clicked");
+    e.preventDefault();
+    window.scrollTo({
+      top: 17200,
+      left: 0,
+      behavior: "smooth" // Smooth scrolling
+    });
   });
-});
-
-bookNav.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 21700,
-    left: 0,
-    behavior: "smooth"
-  })
-})
+  
+  bookNav.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 21700,
+      left: 0,
+      behavior: "smooth"
+    })
+  });
+}
