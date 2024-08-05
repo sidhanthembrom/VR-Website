@@ -49,16 +49,6 @@
   background-color: black;
 }
 
-.text-over-video-container {
-  background-color: rgba(0, 0, 0, 0.111);
-  backdrop-filter: blur(1px);
-  position: relative;
-  top: -898px;
-  height: calc(100vh - 56px);
-  width: 100%;
-  color: white;
-}
-
 .design-first-pic {
   margin-right: -14rem;
 }
@@ -217,11 +207,33 @@ ol {
     bottom: 2rem;
   }
 
+  .video-wrapper {
+    position: relative;
+  }
+
+  .scrim-opacity {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .text-over-video-container {
+    position: relative;
+    top: -898px;
+    height: calc(100vh - 56px);
+    width: 100%;
+    color: white;
+    z-index: 10;
+  }
+
   .sectionVideo {
     position: sticky;
     top: 0;
     width: 100%;
-    transition: width 0.5s ease-in-out;
+    transition: width 0.3s ease-in-out;
   }
 
   .design-first-pic {
