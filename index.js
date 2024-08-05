@@ -20,14 +20,12 @@ const bookNav = document.querySelector(".value");
 
 // Used for Dynamic Opacity
 const opacityContainers = document.querySelectorAll(".scrim-opacity");
-
-// main
 const sectionMainHeadings = document.querySelectorAll(".section-main-heading");
-// main
+
 
 // *** CODING *** //
 
-// Changing navbar color & sectionVideos width dynamically as the page is scrolled
+// Changing Navbar Color, sectionVideos width and opacityContainers Opacity dynamically as the page is scrolled
 window.addEventListener("scroll", () => {
   // console.log(technology.getBoundingClientRect().top)
   let diffTop = navbar.offsetHeight - technology.getBoundingClientRect().top; //traks where top is wrt navabr (generally viewport's top)
@@ -114,65 +112,52 @@ window.addEventListener("scroll", () => {
 
   // opacity for section videos
   opacityContainers.forEach((opacityContainer) => {
+
+    // used for calculating opacity, reducing repetition and 'n' is the scrolled section main heading
+    function opacityChange(n) {
+      if (n == 0) {
+        const sectionHeadingBottom =
+          sectionMainHeadings[n].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
+        const opacityPercentage = (sectionHeadingBottom / 450) * 0.6; //450 - total distance of the section main heading in "text-over-video-container" till the navbar
+
+        // this range is same coz its measured from the navbar and is the top half of the page for lg devices
+        if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
+          opacityContainer.style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
+        }
+      } else {
+        const sectionHeadingBottom =
+          sectionMainHeadings[n * 2].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
+        const opacityPercentage = (sectionHeadingBottom / 450) * 0.6;
+
+        if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
+          opacityContainer.style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
+        }
+      }
+    }
+
     // for first opactity container only
     if (opacityContainer == opacityContainers[0]) {
-      const sectionHeadingBottom =
-        sectionMainHeadings[0].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
-      const opacityPercentage = (sectionHeadingBottom / 450) * 0.6;
-
-      if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
-        opacityContainers[0].style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
-      }
+      opacityChange(0);
     }
     // for second opacity container only
     else if (opacityContainer == opacityContainers[1]) {
-      const sectionHeadingBottom =
-        sectionMainHeadings[2].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
-      const opacityPercentage = (sectionHeadingBottom / 450) * 0.6;
-
-      if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
-        opacityContainers[1].style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
-      }
+      opacityChange(1);
     }
     // for third opacity container only
     else if (opacityContainer == opacityContainers[2]) {
-      const sectionHeadingBottom =
-        sectionMainHeadings[4].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
-      const opacityPercentage = (sectionHeadingBottom / 450) * 0.6;
-
-      if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
-        opacityContainer.style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
-      }
+      opacityChange(2);
     }
     // for fourth opacity container only
     else if (opacityContainer == opacityContainers[3]) {
-      const sectionHeadingBottom =
-        sectionMainHeadings[6].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
-      const opacityPercentage = (sectionHeadingBottom / 450) * 0.6;
-
-      if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
-        opacityContainer.style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
-      }
+      opacityChange(3);
     }
     // for fifth opacity container only
     else if (opacityContainer == opacityContainers[4]) {
-      const sectionHeadingBottom =
-        sectionMainHeadings[8].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
-      const opacityPercentage = (sectionHeadingBottom / 450) * 0.6;
-
-      if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
-        opacityContainer.style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
-      }
+      opacityChange(4);
     }
     // for sixth opacity container only
     else if (opacityContainer == opacityContainers[5]) {
-      const sectionHeadingBottom =
-        sectionMainHeadings[10].getBoundingClientRect().bottom - 66; //adjustment for navbar & spacings
-      const opacityPercentage = (sectionHeadingBottom / 450) * 0.6;
-
-      if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
-        opacityContainer.style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
-      }
+      opacityChange(5);
     }
   });
 });
@@ -199,7 +184,7 @@ bannerVideo.addEventListener("timeupdate", () => {
   }
 });
 
-// scrolling to a certain part when clicked
+// scrolling to a certain part when clicked for Tech Specs and Values nav-link
 const isDesktop = window.matchMedia("(min-width: 1024px)").matches; //keeps watch over the device width
 if (isDesktop) {
   techNav.addEventListener("click", (e) => {
@@ -221,8 +206,3 @@ if (isDesktop) {
     });
   });
 }
-
-// opacity for section videos
-window.addEventListener("scroll", () => {
-  
-});
