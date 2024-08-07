@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 56px;
+  scroll-snap-type: y proximity;
 }
 
 .bg-light {
@@ -243,6 +244,10 @@ ol {
 
   .design-first-pic {
     margin-right: -7rem;
+  }
+
+  #design, #tech, #value{
+    scroll-snap-align: start;
   }
 
   .design-btn-container {
