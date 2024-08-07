@@ -5,22 +5,18 @@ const technology = document.querySelector("#tech");
 const navbar = document.querySelector(".navbar");
 const profileIcon = document.querySelector(".bi-person");
 
-// Used for dynamic width while scrolling
+// Used for Dynamic Width while scrolling
 const sectionVideos = document.querySelectorAll(".sectionVideo");
 
-// Used for changing active navbar
-const nav_links = document.querySelectorAll(".nav-link");
-
-// Used for banner video
-const bannerVideo = document.querySelector(".bannerVideo");
-
-// Used for nav clicking
-const techNav = document.querySelector(".techNav");
-const bookNav = document.querySelector(".value");
-
-// Used for Dynamic Opacity
+// Used for Dynamic Opacity while scrolling
 const opacityContainers = document.querySelectorAll(".scrim-opacity");
 const sectionMainHeadings = document.querySelectorAll(".section-main-heading");
+
+// Used for changing Active Class in navbar
+const nav_links = document.querySelectorAll(".nav-link");
+
+// Used for bannerVideo
+const bannerVideo = document.querySelector(".bannerVideo");
 
 
 // *** CODING *** //
@@ -112,7 +108,6 @@ window.addEventListener("scroll", () => {
 
   // opacity for section videos
   opacityContainers.forEach((opacityContainer) => {
-
     // used for calculating opacity, reducing repetition and 'n' is the scrolled section main heading
     function opacityChange(n) {
       if (n == 0) {
@@ -162,7 +157,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Changing active class to the clicked nav from the previous nav
+// Changing Active Class to the clicked nav from the previous nav
 nav_links.forEach((nav) => {
   nav.addEventListener("click", (e) => {
     const activeClass = document.querySelector(".active");
@@ -183,26 +178,3 @@ bannerVideo.addEventListener("timeupdate", () => {
     bannerVideo.play();
   }
 });
-
-// scrolling to a certain part when clicked for Tech Specs and Values nav-link
-const isDesktop = window.matchMedia("(min-width: 1024px)").matches; //keeps watch over the device width
-if (isDesktop) {
-  techNav.addEventListener("click", (e) => {
-    // console.log("clicked");
-    e.preventDefault();
-    window.scrollTo({
-      top: 17200,
-      left: 0,
-      behavior: "smooth", // Smooth scrolling
-    });
-  });
-
-  bookNav.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 21700,
-      left: 0,
-      behavior: "smooth",
-    });
-  });
-}

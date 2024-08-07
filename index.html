@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="main-container">
-      <!-- navbar -->
+      <!-- fixed-top navbar -->
       <nav class="navbar bg-light fixed-top navbar-expand-lg" data-bs-theme="">
         <div class="container-fluid">
           <a class="navbar-brand d-flex fw-medium" href="#home">
@@ -37,9 +37,10 @@
               <a class="nav-link active" aria-current="page" href="#home"
                 >Overview</a
               >
-              <a class="nav-link" href="#feature">Guided Tour</a>
+              <a class="nav-link" href="#entertainment">Guided Tour</a>
+              <a class="nav-link" href="#design">Design</a>
               <a class="nav-link techNav" href="#tech">Tech Specs</a>
-              <a class="nav-link value" href="#value">Book a demo</a>
+              <a class="nav-link valueNav" href="#value">Book a demo</a>
             </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -186,6 +187,7 @@
 
       <!-- entertainment section -->
       <div
+      id="entertainment"
         class="video-wrapper d-none d-lg-flex flex-column justify-content-center align-items-center"
       >
         <div class="scrim-opacity"></div>
@@ -672,6 +674,7 @@
       <!-- Design section -->
       <div
         class="bg-body-tertiary pt-5 d-flex flex-column justify-content-around overflow-hidden"
+        id="design"
       >
         <div class="container text-center">
           <h5 class="pt-5 font-weight">Design</h5>
@@ -782,7 +785,7 @@
       </div>
       <div class="design-btn-container d-flex flex-column justify-content-end">
         <div class="d-flex justify-content-center pb-5">
-          <button class="custom-button pr-3">
+          <button class="custom-button pr-3 design-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="27"
@@ -805,7 +808,7 @@
         id="tech"
         class="technology-section text-white text-center py-5 d-flex flex-column justify-content-around"
       >
-        <div class="spacer py-3"></div>
+        <!-- <div class="spacer py-3"></div> -->
         <div class="container">
           <h5 class="pt-5 font-weight">Technology</h5>
           <h2 class="section-main-heading fw-bold">

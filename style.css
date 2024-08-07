@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 56px;
+}
+
 .bg-light {
   background-color: rgba(255, 255, 255, 0.7) !important;
   backdrop-filter: blur(2rem);
@@ -11,7 +16,7 @@
 
 .home {
   height: calc(100vh);
-  /* margin-top: 56px; */
+  margin-top: 56px;
 }
 
 .banner-container {
@@ -251,6 +256,15 @@ ol {
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .home {
+    height: calc(100vh - 56px);
+  }
+
+  #feature {
+    height: calc(100vh - 56px);
+  }
+}
 @media screen and (min-width: 2560px) {
   .vr-headset-zoomed {
     height: 38vh;
