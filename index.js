@@ -18,10 +18,30 @@ const nav_links = document.querySelectorAll(".nav-link");
 // Used for bannerVideo
 const bannerVideo = document.querySelector(".bannerVideo");
 
+// for the canvas girl
+const canvas = document.querySelector(".canvas");
+canvas.width = window.innerWidth / 1.7;
+canvas.height = window.innerHeight;
+
+const c = canvas.getContext("2d");
+
+const arr = [];
+
+let imagesLoaded = 0;
+
+const frames = {
+  startFrame: 0,
+  endFrame: 199,
+};
+
+const texts = document.querySelectorAll(".texts");
+const texts2 = document.querySelectorAll(".text2");
+
 
 // *** CODING *** //
 
 // Changing Navbar Color, sectionVideos width and opacityContainers Opacity dynamically as the page is scrolled
+
 window.addEventListener("scroll", () => {
   // console.log(technology.getBoundingClientRect().top)
   let diffTop = navbar.offsetHeight - technology.getBoundingClientRect().top; //traks where top is wrt navabr (generally viewport's top)
@@ -177,4 +197,100 @@ bannerVideo.addEventListener("timeupdate", () => {
     bannerVideo.currentTime = startTime;
     bannerVideo.play();
   }
+});
+
+const designNav = document.querySelector(".designNav");
+const designSection = document.querySelector("#design");
+
+const techSection = document.querySelector(".techNav");
+const valueSection = document.querySelector(".valueNav");
+
+designNav.addEventListener("click", () => {
+  console.log("clicked");
+  designSection.classList.add("scollSnapAlign");
+});
+
+window.addEventListener("scroll", () => {
+  designSection.classList.remove("scollSnapAlign");
+});
+
+window.addEventListener("load", () => {
+  // to load images in arr and display the first image
+  for (let i = 0; i <= frames.endFrame; i++) {
+    const img = new Image();
+    img.src = `https://www.apple.com/105/media/us/apple-vision-pro/2024/6e1432b2-fe09-4113-a1af-f20987bcfeee/anim/360/large/${i
+      .toString()
+      .padStart(4, "0")}.jpg`;
+    arr.push(img);
+    img.onload = () => {
+      imagesLoaded++;
+      if (imagesLoaded === 200) {
+        // console.log("HELLO");
+        loadImages(frames.startFrame);
+        // startAnimation();
+      }
+    };
+  }
+
+  // to display images in canvas
+  function loadImages(index) {
+    const img = arr[index];
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    c.imageSmoothingEnabled = true;
+    c.imageSmoothingQuality = "high";
+    c.drawImage(img, 0, 0, canvas.width, canvas.height);
+    // frames.startFrame = index;
+  }
+
+  //animation of images through frames
+  gsap.to(frames, {
+    startFrame: frames.endFrame,
+    scrollTrigger: {
+      trigger: ".parent",
+      scrub: 2,
+      // markers: true,
+      start: "top 60",
+      pin: true,
+    },
+    onUpdate: function () {
+      loadImages(Math.floor(frames.startFrame));
+    },
+  });
+
+  // FOR THE FIRST THREE TEXTS
+  // making a timeline and tying it to scrollTrigger
+  var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".design-text-container",
+      start: "bottom 62%",
+      end: "bottom 34%",
+      scrub: 3,
+      // markers: true,
+    },
+  });
+
+  // adding animation of the text to the timeline one after the other
+  texts.forEach((text) => {
+    // console.log(text);
+    tl.fromTo(text, { opacity: 0 }, { opacity: 1, y: -80 }).to(text, {
+      opacity: 0,
+    });
+  });
+
+  // FOR THE LAST THREE TEXTS
+  var tl1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".design-text-container-2",
+      start: "bottom 25%",
+      end: "bottom -20%",
+      scrub: 3,
+      // markers: true,
+    },
+  });
+
+  texts2.forEach((text) => {
+    tl1
+      .fromTo(text, { opacity: 0 }, { opacity: 1, y: -80 })
+      .to(text, { opacity: 0 });
+  });
 });
