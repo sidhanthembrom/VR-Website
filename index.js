@@ -18,6 +18,11 @@ const nav_links = document.querySelectorAll(".nav-link");
 // Used for bannerVideo
 const bannerVideo = document.querySelector(".bannerVideo");
 
+//for scrolling adjustment of value and tech nav links
+const techNav = document.querySelector(".techNav");
+const valueNav = document.querySelector(".valueNav");
+const valuePage = document.querySelector("#value");
+
 // for the canvas girl
 const canvas = document.querySelector(".canvas");
 canvas.width = window.innerWidth / 1.7;
@@ -135,7 +140,7 @@ window.addEventListener("scroll", () => {
 
       // this range is same coz its measured from the navbar and is the top half of the page for lg devices
       if (sectionHeadingBottom < 450 && sectionHeadingBottom >= 0) {
-        console.log(sectionHeadingBottom);
+        // console.log(sectionHeadingBottom);
         opacityContainer.style.backgroundColor = `rgba(0, 0, 0, ${opacityPercentage})`;
       }
     }
@@ -189,20 +194,21 @@ bannerVideo.addEventListener("timeupdate", () => {
   }
 });
 
-const designNav = document.querySelector(".designNav");
-const designSection = document.querySelector("#design");
-
-const techSection = document.querySelector(".techNav");
-const valueSection = document.querySelector(".valueNav");
-
-designNav.addEventListener("click", () => {
-  console.log("clicked");
-  designSection.classList.add("scollSnapAlign");
+// for scrolling adjustment of tech and value nav anchor links
+techNav.addEventListener("click", () => {
+  technology.classList.add("scollSnapAlign");
+  
+  setTimeout(() => {
+    technology.classList.remove("scollSnapAlign");
+  }, 1000);
 });
+valueNav.addEventListener("click", () => {
+  valuePage.classList.add("scollSnapAlign");
 
-window.addEventListener("scroll", () => {
-  designSection.classList.remove("scollSnapAlign");
-});
+  setTimeout(() => {
+    valuePage.classList.remove("scollSnapAlign");
+  }, 750);
+})
 
 // for canvas
 window.addEventListener("load", () => {

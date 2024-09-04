@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 56px;
   scroll-snap-type: y;
+  /* overflow-y: scroll; */
 }
 
 .bg-light {
@@ -246,7 +247,7 @@ ol {
     margin-right: -7rem;
   }
 
-  /* #design, #tech, #value{ */
+  /* #home ,#entertainment, #design, #tech, #value { */
   .scollSnapAlign{
     scroll-snap-align: start;
   }
